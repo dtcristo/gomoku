@@ -5,9 +5,9 @@ class Gomoku < Gosu::Window
     super 800, 800, false
     self.caption = "Gomoku"
 
-    @grid = Gosu::Image.new(self, "grid.png", true)
-    @black = Gosu::Image.new(self, "black.png", true)
-    @white = Gosu::Image.new(self, "white.png", true)
+    @grid = Gosu::Image.new(self, "assets/grid.png", true)
+    @black = Gosu::Image.new(self, "assets/black.png", true)
+    @white = Gosu::Image.new(self, "assets/white.png", true)
 
     @state = Hash.new(:blank)
 
