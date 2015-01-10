@@ -14,8 +14,8 @@ class Gomoku < Gosu::Window
     @state = Hash.new(:invalid)
 
     # Setup blank spaces within grid range
-    for r in (0..18)
-      for c in (0..18)
+    for r in (1..19)
+      for c in (1..19)
         @state[[r,c]] = :empty
       end
     end
@@ -69,8 +69,8 @@ class Gomoku < Gosu::Window
     if @process_turn
       # Loop through board cells and check winner, break when found
       catch :break do
-        for r in (0..18)
-          for c in (0..18)
+        for r in (1..19)
+          for c in (1..19)
             winner = check_winner r, c
             if winner != :none
               puts winner.to_s + " wins!"
@@ -89,8 +89,8 @@ class Gomoku < Gosu::Window
     @grid.draw(0, 0, 0)
 
     # Loop through board cells and render stones
-    for r in (0..18)
-      for c in (0..18)
+    for r in (1..19)
+      for c in (1..19)
         stone = @state[[r,c]]
         case stone
         when :white
@@ -102,8 +102,8 @@ class Gomoku < Gosu::Window
     end
 
     # Draw the hover for next piece
-    if @hover_r >= 0 and @hover_r <= 18 and
-       @hover_c >= 0 and @hover_c <= 18 and
+    if @hover_r >= 1 and @hover_r <= 19 and
+       @hover_c >= 1 and @hover_c <= 19 and
        @state[[@hover_r, @hover_c]] == :empty
       if @turn == :black
         @black.draw(c_to_x(@hover_c), r_to_y(@hover_r), 1)
@@ -122,7 +122,7 @@ class Gomoku < Gosu::Window
     end
 
     # Test horizontal sequence
-    if c < 15
+    if c < 16
       count = 0
       (0..4).each do |offset|
         if @state[[r, c+offset]] == current
@@ -137,7 +137,7 @@ class Gomoku < Gosu::Window
     end
 
     # Test vertical sequence
-    if r < 15
+    if r < 16
       count = 0
       (0..4).each do |offset|
         if @state[[r+offset, c]] == current
@@ -152,7 +152,7 @@ class Gomoku < Gosu::Window
     end
 
     # Test diagonal-up sequence
-    if r > 3 and c < 15
+    if r > 4 and c < 16
       count = 0
       (0..4).each do |offset|
         if @state[[r-offset, c+offset]] == current
@@ -167,7 +167,7 @@ class Gomoku < Gosu::Window
     end
 
     # Test diagonal-down sequence
-    if r < 15 and c < 15
+    if r < 16 and c < 16
       count = 0
       (0..4).each do |offset|
         if @state[[r+offset, c+offset]] == current
@@ -187,19 +187,19 @@ class Gomoku < Gosu::Window
 
   # Helper methods
   def r_to_y r
-    return r*40 + 20
+    return r*40 - 20
   end
 
   def c_to_x c
-    return c*40 + 20
+    return c*40 - 20
   end
 
   def x_to_c x
-    return (x.to_i - 20) / 40
+    return (x.to_i + 20) / 40
   end
 
   def y_to_r y
-    return (y.to_i - 20) / 40
+    return (y.to_i + 20) / 40
   end
 end
 
