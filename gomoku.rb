@@ -2,6 +2,7 @@ require 'gosu'
 require_relative 'utility'
 require_relative 'board'
 require_relative 'human'
+require_relative 'computer'
 
 class Gomoku < Gosu::Window
   def initialize
