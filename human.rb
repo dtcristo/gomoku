@@ -1,7 +1,6 @@
 require_relative 'player'
 
 class Human < Player
-
   def is_human?
     true
   end

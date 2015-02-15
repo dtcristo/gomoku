@@ -1,5 +1,5 @@
+# Helper methods
 module Utility
-  # Helper methods
   def Utility.r_to_y r
     r*40 - 20
   end
