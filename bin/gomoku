@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'gomoku'
+
+# Show the Gomoku window
+Gomoku::Gomoku.new.show

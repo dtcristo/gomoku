@@ -1,4 +1,4 @@
-require_relative 'player'
+require 'gomoku/player'
 
 class Human < Player
   def is_human?

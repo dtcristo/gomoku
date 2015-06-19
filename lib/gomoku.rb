@@ -1,10 +1,11 @@
 require 'gosu'
-require_relative 'utility'
-require_relative 'board'
-require_relative 'human'
-require_relative 'computer'
+require 'gomoku/version'
+require 'gomoku/utility'
+require 'gomoku/board'
+require 'gomoku/human'
+require 'gomoku/computer'
 
-class Gomoku < Gosu::Window
+class Gomoku::Gomoku < Gosu::Window
   def initialize
     super 800, 800, false
     self.caption = "Gomoku"
@@ -185,6 +186,3 @@ class Gomoku < Gosu::Window
     end
   end
 end
-
-# Show the Gomoku window
-Gomoku.new.show

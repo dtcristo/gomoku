@@ -1,5 +1,5 @@
 require 'gosu'
-require_relative 'utility'
+require 'gomoku/utility'
 
 class Board
   attr_reader :state
