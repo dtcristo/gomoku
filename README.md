@@ -1,3 +1,3 @@
 # Gomoku
 
-Classic "five in a row" board game
+Classic five-in-a-row board game
