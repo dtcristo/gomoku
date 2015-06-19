@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage     = 'https://github.com/dtcristo/gomoku'
   s.license      = 'MIT'
 
-  s.files        = Dir['{lib}/**/*.rb', 'bin/gomoku', 'LICENSE', '*.md']
+  s.files        = Dir['{lib}/**/*.rb', 'bin/gomoku', 'assets/*.png', 'LICENSE', '*.md']
   s.executables  = ['gomoku']
   s.require_path = 'lib'
 

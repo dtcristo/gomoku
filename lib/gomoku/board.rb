@@ -6,9 +6,9 @@ class Board
 
   def initialize window
     # Setup sprites
-    @grid = Gosu::Image.new(window, "assets/grid.png", true)
-    @black = Gosu::Image.new(window, "assets/black.png", true)
-    @white = Gosu::Image.new(window, "assets/white.png", true)
+    @grid = Gosu::Image.new(window, File.expand_path('../../../assets/grid.png', __FILE__), true)
+    @black = Gosu::Image.new(window, File.expand_path('../../../assets/black.png', __FILE__), true)
+    @white = Gosu::Image.new(window, File.expand_path('../../../assets/white.png', __FILE__), true)
   end
 
   def reset
