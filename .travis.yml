@@ -2,6 +2,20 @@ language: ruby
 rvm:
   - 2.2.2
 before_install:
- - sudo add-apt-repository -y ppa:antumdeluge/sdl2
- - sudo apt-get update -qq
- - sudo apt-get install -qq build-essential libsdl2-dev libsdl2-ttf-dev libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile-dev
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq build-essential libfreeimage3 libfreeimage-dev
+  - wget http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.25.tar.gz
+  - tar -xzvf libsndfile-1.0.25.tar.gz
+  - cd libsndfile-1.0.25 && ./configure --prefix=/usr --disable-static && make && sudo make install
+  - wget https://www.libsdl.org/release/SDL2-2.0.3.tar.gz
+  - wget https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.12.tar.gz
+  - wget https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.0.tar.gz
+  - wget https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.0.tar.gz
+  - tar -xzvf SDL2-2.0.3.tar.gz
+  - tar -xzvf SDL2_ttf-2.0.12.tar.gz
+  - tar -xzvf SDL2_image-2.0.0.tar.gz
+  - tar -xzvf SDL2_mixer-2.0.0.tar.gz
+  - cd SDL2-2.0.3 && ./configure --prefix=/usr && make && sudo make install
+  - cd SDL2_ttf-2.0.12 && ./configure --prefix=/usr && make && sudo make install
+  - cd SDL2_image-2.0.0 && ./configure --prefix=/usr && make && sudo make install
+  - cd SDL2_mixer-2.0.0 && ./configure --prefix=/usr && make && sudo make install
