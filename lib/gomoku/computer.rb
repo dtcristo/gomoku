@@ -1,7 +1,7 @@
 require 'gomoku/player'
 
 class Computer < Player
-  def is_human?
+  def human?
     false
   end
 
@@ -10,9 +10,9 @@ class Computer < Player
       for r in (1..19)
         for c in (1..19)
 
-          if @board.state[[r,c]] == :empty
+          if @board.state[[r, c]] == :empty
 
-            @board.state[[r,c]] = @window.turn
+            @board.state[[r, c]] = @window.turn
             # Update turn
             if @window.turn == :black
               @window.turn = :white

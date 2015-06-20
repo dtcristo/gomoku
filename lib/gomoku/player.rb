@@ -1,5 +1,5 @@
 class Player
-  def initialize window, board, color
+  def initialize(window, board, color)
     @window = window
     @board = board
     @color = color

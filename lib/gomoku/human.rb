@@ -1,7 +1,7 @@
 require 'gomoku/player'
 
 class Human < Player
-  def is_human?
+  def human?
     true
   end
 
@@ -12,9 +12,9 @@ class Human < Player
   end
 
   def draw
+    return unless Utility.in_range?(@hover_r, @hover_c) &&
+                  @board.empty?(@hover_r, @hover_c)
     # Draw the hover for next piece
-    if Utility.in_range?(@hover_r, @hover_c) and @board.is_empty?(@hover_r, @hover_c)
-      @board.draw_stone @color, @hover_r, @hover_c
-    end
+    @board.draw_stone @color, @hover_r, @hover_c
   end
 end
