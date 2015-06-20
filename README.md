@@ -8,11 +8,15 @@ Gomoku is the classic five-in-a-row board game. Challenge a friend or take on th
 
 ## Installation
 
-Install it as a gem:
+Gosu dependencies (OS X):
+
+    $ brew install sdl2 libogg libvorbis
+
+Install as a gem:
 
     $ gem install gomoku
 
-And run it:
+And play:
 
     $ gomoku
 
