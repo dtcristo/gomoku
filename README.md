@@ -15,3 +15,9 @@ Install it as a gem:
 And run it:
 
     $ gomoku
+
+## Todo
+
+* Build basic AI
+* Add menus
+* Add network play
