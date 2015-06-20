@@ -3,7 +3,7 @@ rvm:
   - 2.2.2
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -qq build-essential libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev
+  - sudo apt-get install -qq build-essential libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libogg-dev libvorbis-dev
   - wget http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.25.tar.gz
   - tar -xzvf libsndfile-1.0.25.tar.gz
   - cd libsndfile-1.0.25 && ./configure --prefix=/usr --disable-static && make && sudo make install && cd ..
@@ -19,3 +19,4 @@ before_install:
   - cd SDL2_ttf-2.0.12 && ./configure --prefix=/usr && make && sudo make install && cd ..
   - cd SDL2_image-2.0.0 && ./configure --prefix=/usr && make && sudo make install && cd ..
   - cd SDL2_mixer-2.0.0 && ./configure --prefix=/usr && make && sudo make install && cd ..
+  - env
