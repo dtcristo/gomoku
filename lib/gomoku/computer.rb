@@ -18,8 +18,7 @@ class Computer < Player
               @window.turn = :black
             end
             # Update flag
-            @window.process_turn = true
-
+            @window.done_turn = true
             throw :break
           end
         end
