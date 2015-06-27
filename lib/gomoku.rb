@@ -10,22 +10,18 @@ module Gomoku
     def initialize
       super 800, 800, false
       self.caption = 'Gomoku'
-
       @board = Board.new(self)
       @black_player = Human.new(self, @board, :black)
       @white_player = Human.new(self, @board, :white)
-
       # Start a new game
-      new_game
+      new_game()
     end
 
     def new_game
       # Reset the board
-      @board.reset
-
+      @board.reset()
       # Black goes first
       @turn = :black
-
       # Setup flag to indicate a turn needs to be processed
       @process_turn = false
 
@@ -39,7 +35,7 @@ module Gomoku
     def button_down id
       case id
       when Gosu::KbEscape
-        close
+        close()
       when Gosu::MsLeft
         # If no winner, attempt a move
         if !@winner
@@ -74,9 +70,9 @@ module Gomoku
     def update
       case @turn
       when :black
-        @black_player.update
+        @black_player.update()
       when :white
-        @white_player.update
+        @white_player.update()
       end
 
       # If a move has been made, process the turn

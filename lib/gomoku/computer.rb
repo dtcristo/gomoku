@@ -9,9 +9,7 @@ class Computer < Player
     catch :break do
       for r in (1..19)
         for c in (1..19)
-
           if @board.state[[r, c]] == :empty
-
             @board.state[[r, c]] = @window.turn
             # Update turn
             if @window.turn == :black
@@ -19,7 +17,6 @@ class Computer < Player
             else
               @window.turn = :black
             end
-
             # Update flag
             @window.process_turn = true
 
