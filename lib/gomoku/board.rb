@@ -14,7 +14,7 @@ module Gomoku
       # Default value in @state is invalid move (outside grid)
       @state = Hash.new(:invalid)
       # Setup blank spaces within grid range
-      each_r_c do |r, c|
+      Board.each_r_c do |r, c|
         @state[[r, c]] = :empty
       end
     end
@@ -23,7 +23,7 @@ module Gomoku
       # Draw the empty grid
       @grid.draw(0, 0, 0)
       # Loop through board cells and render stones
-      each_r_c do |r, c|
+      Board.each_r_c do |r, c|
         color = @state[[r, c]]
         draw_stone(color, r, c)
       end
