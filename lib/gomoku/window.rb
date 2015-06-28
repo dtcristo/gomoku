@@ -69,18 +69,14 @@ module Gomoku
 
     # Loop through board cells and check winner, break when found
     def process_turn
-      catch :break do
-        for r in (1..19)
-          for c in (1..19)
-            win = @board.check_win(r, c)
-            if win != :none
-              @winner = true
-              @winner_direction = win
-              @winner_r = r
-              @winner_c = c
-              throw :break
-            end
-          end
+      Board.each_r_c do |r, c|
+        win = @board.check_win(r, c)
+        unless win == :none
+          @winner = true
+          @winner_direction = win
+          @winner_r = r
+          @winner_c = c
+          break
         end
       end
       # Done processing, reset flag

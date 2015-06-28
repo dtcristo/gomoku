@@ -6,18 +6,14 @@ module Gomoku
     end
 
     def update
-      catch :break do
-        for r in (1..19)
-          for c in (1..19)
-            if @board.state[[r, c]] == :empty
-              @board.state[[r, c]] = @window.turn
-              # Update turn
-              @window.turn = Utility.toggle_color(@window.turn)
-              # Update flag
-              @window.done_turn = true
-              throw :break
-            end
-          end
+      Board.each_r_c do |r, c|
+        if @board.state[[r, c]] == :empty
+          @board.state[[r, c]] = @window.turn
+          # Update turn
+          @window.turn = Utility.toggle_color(@window.turn)
+          # Update flag
+          @window.done_turn = true
+          break
         end
       end
     end

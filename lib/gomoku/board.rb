@@ -107,5 +107,13 @@ module Gomoku
     def empty?(r, c)
       state[[r, c]] == :empty
     end
+
+    def self.each_r_c
+      (1..19).each do |r|
+        (1..19).each do |c|
+          yield r, c
+        end
+      end
+    end
   end
 end
