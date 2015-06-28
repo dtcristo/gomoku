@@ -14,10 +14,8 @@ module Gomoku
       # Default value in @state is invalid move (outside grid)
       @state = Hash.new(:invalid)
       # Setup blank spaces within grid range
-      for r in (1..19)
-        for c in (1..19)
-          @state[[r, c]] = :empty
-        end
+      each_r_c do |r, c|
+        @state[[r, c]] = :empty
       end
     end
 
@@ -25,11 +23,9 @@ module Gomoku
       # Draw the empty grid
       @grid.draw(0, 0, 0)
       # Loop through board cells and render stones
-      for r in (1..19)
-        for c in (1..19)
-          color = @state[[r, c]]
-          draw_stone(color, r, c)
-        end
+      each_r_c do |r, c|
+        color = @state[[r, c]]
+        draw_stone(color, r, c)
       end
     end
 
