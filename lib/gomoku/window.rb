@@ -137,7 +137,7 @@ module Gomoku
         line_x1_1 = Utility.c_to_x(@winner_c)
         line_y1_1 = Utility.r_to_y(@winner_r + 1)
         line_x1_2 = Utility.c_to_x(@winner_c + 5)
-        line_y1_2 = Utility.r_to_y(@winner_r - 5)
+        line_y1_2 = Utility.r_to_y(@winner_r - 4)
 
         line_x2_1 = line_x1_1
         line_y2_1 = line_y1_1 + 1
