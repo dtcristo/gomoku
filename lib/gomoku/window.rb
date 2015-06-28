@@ -1,4 +1,5 @@
 module Gomoku
+  # Main Gomoku window and game loop
   class Window < Gosu::Window
     def initialize
       super 800, 800, false
