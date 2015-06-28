@@ -30,5 +30,9 @@ module Gomoku
         :black
       end
     end
+
+    def asset_path(asset)
+      File.expand_path("../../../assets/#{asset}", __FILE__)
+    end
   end
 end

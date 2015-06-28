@@ -5,9 +5,9 @@ module Gomoku
 
     def initialize(window)
       # Setup sprites
-      @grid = Gosu::Image.new(window, File.expand_path('../../../assets/grid.png', __FILE__), true)
-      @black = Gosu::Image.new(window, File.expand_path('../../../assets/black.png', __FILE__), true)
-      @white = Gosu::Image.new(window, File.expand_path('../../../assets/white.png', __FILE__), true)
+      @grid = Gosu::Image.new(window, Utility.asset_path('grid.png'), true)
+      @black = Gosu::Image.new(window, Utility.asset_path('black.png'), true)
+      @white = Gosu::Image.new(window, Utility.asset_path('white.png'), true)
     end
 
     def reset
