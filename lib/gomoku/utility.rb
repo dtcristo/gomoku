@@ -22,5 +22,13 @@ module Gomoku
     def in_range?(r, c)
       r >= 1 && r <= 19 && c >= 1 && c <= 19
     end
+
+    def toggle_color(color)
+      if color == :black
+        :white
+      else
+        :black
+      end
+    end
   end
 end

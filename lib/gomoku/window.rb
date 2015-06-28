@@ -46,11 +46,7 @@ module Gomoku
           # Perform move
           @board.state[[click_r, click_c]] = @turn
           # Update turn
-          @turn = if @turn == :black
-                    :white
-                  else
-                    :black
-                  end
+          @turn = Utility.toggle_color(@turn)
           # Update flag
           @done_turn = true
         end

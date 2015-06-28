@@ -12,11 +12,7 @@ module Gomoku
             if @board.state[[r, c]] == :empty
               @board.state[[r, c]] = @window.turn
               # Update turn
-              if @window.turn == :black
-                @window.turn = :white
-              else
-                @window.turn = :black
-              end
+              @window.turn = Utility.toggle_color(@window.turn)
               # Update flag
               @window.done_turn = true
               throw :break

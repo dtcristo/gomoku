@@ -13,4 +13,14 @@ class UtilityTest < Minitest::Test
     refute Gomoku::Utility.in_range?(10, 20)
     refute Gomoku::Utility.in_range?(-19, -19)
   end
+
+  def test_toggle_color_when_black
+    result = Gomoku::Utility.toggle_color(:black)
+    assert_equal :white, result
+  end
+
+  def test_toggle_color_when_white
+    result = Gomoku::Utility.toggle_color(:white)
+    assert_equal :black, result
+  end
 end
