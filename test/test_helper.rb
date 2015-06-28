@@ -1,4 +1,6 @@
-# $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'gomoku'
+# CodeClimate code coverage
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 
+require 'gomoku'
 require 'minitest/autorun'
