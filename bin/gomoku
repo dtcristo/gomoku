@@ -3,4 +3,4 @@
 require 'gomoku'
 
 # Show the Gomoku window
-Gomoku::Gomoku.new.show
+Gomoku::Window.new.show

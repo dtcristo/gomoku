@@ -1,25 +1,26 @@
-require 'gomoku/player'
+module Gomoku
+  # Computer controlled player
+  class Computer < Player
+    def human?
+      false
+    end
 
-class Computer < Player
-  def human?
-    false
-  end
-
-  def update
-    catch :break do
-      for r in (1..19)
-        for c in (1..19)
-          if @board.state[[r, c]] == :empty
-            @board.state[[r, c]] = @window.turn
-            # Update turn
-            if @window.turn == :black
-              @window.turn = :white
-            else
-              @window.turn = :black
+    def update
+      catch :break do
+        for r in (1..19)
+          for c in (1..19)
+            if @board.state[[r, c]] == :empty
+              @board.state[[r, c]] = @window.turn
+              # Update turn
+              if @window.turn == :black
+                @window.turn = :white
+              else
+                @window.turn = :black
+              end
+              # Update flag
+              @window.done_turn = true
+              throw :break
             end
-            # Update flag
-            @window.done_turn = true
-            throw :break
           end
         end
       end
