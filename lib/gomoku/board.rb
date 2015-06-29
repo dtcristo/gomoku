@@ -8,6 +8,8 @@ module Gomoku
       @grid = Gosu::Image.new(window, Utility.asset_path('grid.png'), true)
       @black = Gosu::Image.new(window, Utility.asset_path('black.png'), true)
       @white = Gosu::Image.new(window, Utility.asset_path('white.png'), true)
+      @black_hover = Gosu::Image.new(window, Utility.asset_path('black_hover.png'), true)
+      @white_hover = Gosu::Image.new(window, Utility.asset_path('white_hover.png'), true)
     end
 
     def reset
@@ -35,6 +37,15 @@ module Gomoku
         @black.draw(Utility.c_to_x(c), Utility.r_to_y(r), 1)
       when :white
         @white.draw(Utility.c_to_x(c), Utility.r_to_y(r), 1)
+      end
+    end
+
+    def draw_hover(color, r, c)
+      case color
+      when :black
+        @black_hover.draw(Utility.c_to_x(c), Utility.r_to_y(r), 1)
+      when :white
+        @white_hover.draw(Utility.c_to_x(c), Utility.r_to_y(r), 1)
       end
     end
 

@@ -15,7 +15,7 @@ module Gomoku
       return unless Utility.in_range?(@hover_r, @hover_c) &&
                     @board.empty?(@hover_r, @hover_c)
       # Draw the hover for next piece
-      @board.draw_stone(@color, @hover_r, @hover_c)
+      @board.draw_hover(@color, @hover_r, @hover_c)
     end
   end
 end
