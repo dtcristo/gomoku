@@ -42,14 +42,11 @@ module Gomoku
         # Get the location of the click
         click_r = Utility.y_to_r(mouse_y)
         click_c = Utility.x_to_c(mouse_x)
-        # Check for blank space
-        if @board.state[[click_r, click_c]] == :empty
-          # Perform move
-          @board.state[[click_r, click_c]] = @turn
-          # Update turn
-          @turn = Utility.toggle_color(@turn)
-          # Update flag
-          @done_turn = true
+        case @turn
+        when :black
+          @black_player.click(click_r, click_c)
+        when :white
+          @white_player.click(click_r, click_c)
         end
       end
     end
@@ -61,11 +58,28 @@ module Gomoku
       case @turn
       when :black
         @black_player.update
+        move = @black_player.pick_move
       when :white
         @white_player.update
+        move = @white_player.pick_move
       end
-      # Process the turn if a move has been made
+      # Perform the move
+      do_move(move) if move
+      # Process the turn if done
       process_turn if @done_turn
+    end
+
+    def do_move(move)
+      r = move[0]
+      c = move[1]
+      # Return if not blank
+      return unless @board.state[[r, c]] == :empty
+      # Perform move
+      @board.state[[r, c]] = @turn
+      # Update turn
+      @turn = Utility.toggle_color(@turn)
+      # Update flag
+      @done_turn = true
     end
 
     # Loop through board cells and check winner, break when found
