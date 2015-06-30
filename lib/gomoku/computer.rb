@@ -12,15 +12,13 @@ module Gomoku
       # Test position and maybe return move here
 
       # Update hover location
-      hover_next
-
-      # return unless @hover_r && @hover_r
-      # return unless @board.empty?(@hover_r, @hover_r)
-      # return unless @hover_r >= 10 && @hover_c >= 10
-      # move_r = @hover_r
-      # move_c = @hover_c
-      # @hover_r, @hover_c = 1
-      # [move_r, move_c]
+      unless hover_next
+        # No new hover
+        move_r = @hover_r
+        move_c = @hover_c
+        @hover_r, @hover_c = 1
+      end
+      [move_r, move_c]
     end
 
     def hover_next
@@ -36,9 +34,10 @@ module Gomoku
         if @board.empty?(r, c)
           @hover_r = r
           @hover_c = c
-          return
+          return true
         end
       end
+      false
     end
   end
 end
