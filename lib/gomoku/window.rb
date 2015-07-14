@@ -7,6 +7,7 @@ module Gomoku
       @board = Board.new(self)
       @black_player = Human.new(self, @board, :black)
       @white_player = Human.new(self, @board, :white)
+      # @white_player = Computer.new(self, @board, :white)
       # Start a new game
       new_game
     end
