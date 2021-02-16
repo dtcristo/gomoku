@@ -15,13 +15,11 @@ Gem::Specification.new do |spec|
   spec.executables  = ['gomoku']
   spec.require_path = 'lib'
 
-  spec.add_runtime_dependency 'gosu', '~> 0.9.2'
+  spec.add_runtime_dependency 'gosu', '~> 1.1'
 
-  spec.add_development_dependency 'bundler', '~> 1.10'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'bundler', '~> 2.2'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'minitest'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'codeclimate-test-reporter'
 
   spec.required_ruby_version = '~> 2'
 end

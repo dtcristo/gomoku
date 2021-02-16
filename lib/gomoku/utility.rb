@@ -1,5 +1,4 @@
 module Gomoku
-  # Helper methods
   module Utility
     module_function
 
