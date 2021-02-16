@@ -1,6 +1,5 @@
 require 'test_helper'
 
-# Test Utility
 class UtilityTest < Minitest::Test
   def test_in_range_when_in_range
     assert Gomoku::Utility.in_range?(1, 1)

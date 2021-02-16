@@ -1,6 +1,5 @@
 require 'test_helper'
 
-# Test Board
 class BoardTest < Minitest::Test
   def test_each_r_c
     count = 0

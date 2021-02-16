@@ -1,27 +1,46 @@
-# Gomoku [![Gem Version](https://badge.fury.io/rb/gomoku.svg)](https://rubygems.org/gems/gomoku)
+<div align="center">
+  <h1>Gomoku</h1>
+  <p>
+    <strong>
+      The classic five-in-a-row board game
+    </strong>
+  </p>
+  <p>
+    <a href="https://rubygems.org/gems/gomoku">
+      <img src="https://img.shields.io/gem/v/gomoku" alt="RubyGems version badge" />
+    </a>
+  </p>
+  <img src="assets/screenshot.png" />
+</div>
 
-Gomoku is the classic five-in-a-row board game. Challenge a friend or take on the AI. Gomoku is built with [Gosu](https://www.libgosu.org/), the 2D game library for Ruby.
+## Introduction
 
-![Screenshot](https://raw.github.com/dtcristo/gomoku/master/assets/screenshot.png)
+Challenge a friend or take on the AI. Gomoku is built with [Gosu](https://www.libgosu.org), the 2D game library for Ruby.
 
 ## Installation
 
-Gosu dependencies (OS X):
+Gosu dependencies (macOS).
 
-    $ brew install sdl2 libogg libvorbis
+```sh
+brew install sdl2
+```
 
 For Linux dependencies, read [Getting Started on Linux](https://github.com/gosu/gosu/wiki/Getting-Started-on-Linux).
 
-Install as a gem:
+Install dependencies.
 
-    $ gem install gomoku
+```sh
+bundle install
+```
 
-And play:
+And play.
 
-    $ gomoku
+```sh
+bundle exec gomoku
+```
 
 ## Todo
 
-* Build basic AI
-* Add menus
-* Add network play
+- Build basic AI
+- Add menus
+- Add network play

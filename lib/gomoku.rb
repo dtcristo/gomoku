@@ -1,7 +1,6 @@
 require 'gosu'
 require 'gomoku/version'
 
-# Main Gomoku module
 module Gomoku
   autoload :Board,    'gomoku/board'
   autoload :Computer, 'gomoku/computer'

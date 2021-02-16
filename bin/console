@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'bundler/setup'
-require 'gomoku'
-require 'pry'
-
-Pry.start
